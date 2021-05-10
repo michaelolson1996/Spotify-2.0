@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Spotify_2._0.Backend;
 using Spotify_2._0.Classes;
+using System.IO;
 
 namespace Spotify_2._0
 {
@@ -22,8 +23,9 @@ namespace Spotify_2._0
     /// </summary>
     public partial class MainWindow : Window
     {
-         
+
         BackendTest backend = new BackendTest();
+        Backend.Backend backend2 = new Backend.Backend();
 
         public MainWindow()
         {
@@ -32,13 +34,9 @@ namespace Spotify_2._0
             List<Playlist> playlists = backend.RetrievePlaylists(50);
             List<Song> songs = backend.RetrievePlaylistSongs(30);
 
-
-
             playlists.ForEach(playlist => {
                 Playlist_Text_Block.Text += $"Name : {playlist.name} \nDescription : {playlist.description}\n";
             });
-
-
         }
     }
 }
