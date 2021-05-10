@@ -17,6 +17,7 @@ namespace Spotify_2._0.Backend
     {
         private string ClientId;
         private string ClientSecret;
+        private AccessToken Token { get; set; }
 
         class AccessToken
         {
@@ -37,10 +38,10 @@ namespace Spotify_2._0.Backend
             ClientId = Environment.GetEnvironmentVariable("CLIENT_ID");
             ClientSecret = Environment.GetEnvironmentVariable("CLIENT_SECRET");
 
-            _ = RetrieveToken();
+            Token = RetrieveToken().Result;
         }
 
-        private async Task RetrieveToken()
+        private async Task<AccessToken> RetrieveToken()
         {
             using (var client = new HttpClient())
             {
@@ -61,8 +62,6 @@ namespace Spotify_2._0.Backend
                 // send request and await response
                 var request = await client.PostAsync("https://accounts.spotify.com/api/token", requestBody);
                 var response = await request.Content.ReadAsStringAsync();
-
-                JsonSerializer.
 
                 return JsonConvert.DeserializeObject<AccessToken>(response);
             }
