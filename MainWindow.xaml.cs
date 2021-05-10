@@ -25,17 +25,21 @@ namespace Spotify_2._0
     {
 
         BackendTest backend = new BackendTest();
-        Backend.Backend backend2 = new Backend.Backend();
+        //    Backend.Backend backend2 = new Backend.Backend();
 
         public MainWindow()
         {
             InitializeComponent();
 
-            List<Playlist> playlists = backend.RetrievePlaylists(50);
-            List<Song> songs = backend.RetrievePlaylistSongs(30);
+            List<Playlist> playlists = backend.RetrievePlaylists(5);
+            List<Song> songs = backend.RetrievePlaylistSongs(3);
 
             playlists.ForEach(playlist => {
                 Playlist_Text_Block.Text += $"Name : {playlist.name} \nDescription : {playlist.description}\n";
+            });
+            songs.ForEach(song =>
+            {
+                Song_Text_Block.Text += $"Name: {song.name}\nDuration: {song.duration}\n";
             });
         }
     }
