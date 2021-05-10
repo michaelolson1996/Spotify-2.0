@@ -1,20 +1,20 @@
 ﻿Spotify 2.0
-1.0.0.0
+
 
 winexe
 C#
 .cs
-C:\Users\lawliet\source\repos\Spotify-2.0\obj\Debug\net5.0-windows\
+C:\Users\lawliet\source\repos\Spotify-2.0\obj\Release\net5.0-windows\
 Spotify_2._0
 none
 false
-TRACE;DEBUG;NET;NET5_0;NETCOREAPP
+TRACE;RELEASE;NET;NET5_0;NETCOREAPP
 C:\Users\lawliet\source\repos\Spotify-2.0\App.xaml
 11407045341
 
-9-767150126
+7562411373
 196649516966
 MainWindow.xaml;
 
-False
+True
 

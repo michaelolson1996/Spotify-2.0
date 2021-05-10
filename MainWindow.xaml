@@ -5,14 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Spotify_2._0"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainApplicationWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,19,0,0" Text="Songs" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.646,-1.699"/>
-        <TextBlock HorizontalAlignment="Center" Margin="0,19,0,0" Text="Playlists" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,30,0,0" Text="Songs" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Center" Margin="0,30,0,0" Text="Playlists" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBlock x:Name="Playlist_Text_Block" HorizontalAlignment="Left" Margin="0,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="374" Width="390"/>
         <TextBlock x:Name="Song_Text_Block" Grid.Column="1" HorizontalAlignment="Center" Margin="0,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="374" Width="380"/>
     </Grid>
