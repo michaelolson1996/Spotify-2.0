@@ -9,8 +9,8 @@ go to this url https://developer.spotify.com/dashboard/ and create a project to 
 
 ## Step 3
 create a .env file in the project's root directory, and copy credentials into .env file like this
-CLIENT_ID=000000000000000000000
+CLIENT_ID=000000000000000000000<br />
 CLIENT_SECRET=00000000000000000000000
 
-##Step 4
+## Step 4
 run the application and search for user's playlists!
