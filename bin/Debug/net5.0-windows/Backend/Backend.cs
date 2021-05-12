@@ -53,7 +53,7 @@ namespace Spotify_2._0.Backend
             spotify = new SpotifyClient(config.WithToken(response.AccessToken));
         }
 
-        private async Task<List<Playlist>> GetPlaylists(string username)
+        public async Task<List<Playlist>> GetPlaylists(string username)
         {
             try
             {
