@@ -9,14 +9,19 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-        </Grid.RowDefinitions>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,30,0,0" Text="Songs" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock Grid.Column="0" HorizontalAlignment="Center" Margin="0,30,0,0" Text="Playlists" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock x:Name="Playlist_Text_Block" HorizontalAlignment="Left" Margin="0,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="374" Width="390"/>
-        <TextBlock x:Name="Song_Text_Block" Grid.Column="1" HorizontalAlignment="Center" Margin="0,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="374" Width="380"/>
+        <Grid>
+            <TextBox x:Name="userName" Height="25" Width="150" Margin="55,55,595,354"/>
+            <Button x:Name="SS" Click="SearchUser" Content="Search" Height="25" Width="64" Margin="210,55,526,354"/>
+            <TextBlock Height="50" Width="200" Margin="499,10,201,324"/>
+            <Label HorizontalAlignment="Left" Margin="664,128,0,0" Content="Song Name"  VerticalAlignment="Top" RenderTransformOrigin="0.646,-1.699"/>
+            <Label HorizontalAlignment="Left" Margin="77,128,0,0" Content="Playlist" VerticalAlignment="Top"/>
+            <Label Content="Album Name" Margin="459,128,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label Content="Artist name" Margin="265,128,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBlock x:Name="Playlist_Text_Block" HorizontalAlignment="Left" Margin="10,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="257" Width="180"/>
+            <TextBlock x:Name="Song_Text_Block" HorizontalAlignment="Left" Margin="610,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="257" Width="180"/>
+            <TextBlock x:Name="Artist_Name" Margin="210,167,411,10" TextWrapping="Wrap" Height="257" Width="180"/>
+            <TextBlock x:Name="Album_name"  TextWrapping="Wrap" Height="257" Width="180" Margin="409,167,211,10"/>
+        </Grid>
     </Grid>
 </Window>
