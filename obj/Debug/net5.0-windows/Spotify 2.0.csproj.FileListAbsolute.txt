@@ -23,3 +23,29 @@ C:\Users\Michael Olson\Desktop\spotify-2.0\Spotify 2.0\obj\Debug\net5.0-windows\
 C:\Users\Michael Olson\Desktop\spotify-2.0\Spotify 2.0\bin\Debug\net5.0-windows\DotNetEnv.dll
 C:\Users\Michael Olson\Desktop\spotify-2.0\Spotify 2.0\bin\Debug\net5.0-windows\Sprache.dll
 C:\Users\Michael Olson\Desktop\spotify-2.0\Spotify 2.0\obj\Debug\net5.0-windows\Spotify 2.0.csproj.CopyComplete
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\bin\Debug\net5.0-windows\Spotify 2.0.exe
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\bin\Debug\net5.0-windows\Spotify 2.0.deps.json
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\bin\Debug\net5.0-windows\Spotify 2.0.runtimeconfig.json
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\bin\Debug\net5.0-windows\Spotify 2.0.runtimeconfig.dev.json
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\bin\Debug\net5.0-windows\Spotify 2.0.dll
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\bin\Debug\net5.0-windows\ref\Spotify 2.0.dll
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\bin\Debug\net5.0-windows\Spotify 2.0.pdb
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\bin\Debug\net5.0-windows\DotNetEnv.dll
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\bin\Debug\net5.0-windows\Sprache.dll
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\obj\Debug\net5.0-windows\Spotify 2.0.csprojAssemblyReference.cache
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\obj\Debug\net5.0-windows\Spotify 2.0_MarkupCompile.cache
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\obj\Debug\net5.0-windows\Spotify 2.0_MarkupCompile.lref
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\obj\Debug\net5.0-windows\MainWindow.baml
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\obj\Debug\net5.0-windows\Spotify 2.0.g.resources
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\obj\Debug\net5.0-windows\Spotify 2.0.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\obj\Debug\net5.0-windows\Spotify 2.0.AssemblyInfoInputs.cache
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\obj\Debug\net5.0-windows\Spotify 2.0.AssemblyInfo.cs
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\obj\Debug\net5.0-windows\Spotify 2.0.csproj.CoreCompileInputs.cache
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\obj\Debug\net5.0-windows\Spotify 2.0.csproj.CopyComplete
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\obj\Debug\net5.0-windows\Spotify 2.0.dll
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\obj\Debug\net5.0-windows\ref\Spotify 2.0.dll
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\obj\Debug\net5.0-windows\Spotify 2.0.pdb
+C:\Users\Carlos Duran\Desktop\Classes\Year 3\Quarter 1\software\Project\obj\Debug\net5.0-windows\Spotify 2.0.genruntimeconfig.cache

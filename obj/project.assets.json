@@ -4597,19 +4597,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Michael Olson\\.nuget\\packages\\": {}
+    "C:\\Users\\Carlos Duran\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Michael Olson\\Desktop\\spotify-2.0\\Spotify 2.0\\Spotify 2.0.csproj",
+      "projectUniqueName": "C:\\Users\\Carlos Duran\\Desktop\\Classes\\Year 3\\Quarter 1\\software\\Project\\Spotify 2.0.csproj",
       "projectName": "Spotify 2.0",
-      "projectPath": "C:\\Users\\Michael Olson\\Desktop\\spotify-2.0\\Spotify 2.0\\Spotify 2.0.csproj",
-      "packagesPath": "C:\\Users\\Michael Olson\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Michael Olson\\Desktop\\spotify-2.0\\Spotify 2.0\\obj\\",
+      "projectPath": "C:\\Users\\Carlos Duran\\Desktop\\Classes\\Year 3\\Quarter 1\\software\\Project\\Spotify 2.0.csproj",
+      "packagesPath": "C:\\Users\\Carlos Duran\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Carlos Duran\\Desktop\\Classes\\Year 3\\Quarter 1\\software\\Project\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Michael Olson\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Carlos Duran\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4662,7 +4667,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
