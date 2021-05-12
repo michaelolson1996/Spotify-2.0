@@ -47,9 +47,9 @@ namespace Spotify_2._0.Backend
 
             Trace.WriteLine(Token.access_token);
 
-            Task<Object> task_playlists = RetrievePlaylists("icedin");
+            /*Task<T> task_playlists = RetrievePlaylists<T>("icedin");*/
 
-            _ = await task_playlists;
+           /* _ = await task_playlists;*/
             /*_ = RetrievePlaylists("icedin");*/
         }
 
@@ -79,10 +79,10 @@ namespace Spotify_2._0.Backend
             }
         }
 
-        private async Task<Object> RetrievePlaylists(string username)
+ /*       private async Task<T> RetrievePlaylists<T>(string username)
         {
             string url = $"https://api.spotify.com/v1/users/{username}/playlists?access_token={Token.access_token}";
-            /*Trace.WriteLine("RetrievePlaylists Method");*/
+            *//*Trace.WriteLine("RetrievePlaylists Method");*//*
 
             using (var client = new HttpClient())
             {
@@ -92,16 +92,20 @@ namespace Spotify_2._0.Backend
                 var request = await client.GetAsync(url);
                 var response = await request.Content.ReadAsStringAsync();
 
-                Trace.WriteLine(response);
+                T type = default(T);
 
-               /* Newtonsoft.Json.JsonSerializer js = new Newtonsoft.Json.JsonSerializer();
+                type = JsonConvert.DeserializeObject<T>(response);
+
+                Trace.WriteLine(type);
+
+               *//* Newtonsoft.Json.JsonSerializer js = new Newtonsoft.Json.JsonSerializer();
                 
-                Trace.WriteLine(js.Deserialize(response));*/
+                Trace.WriteLine(js.Deserialize(response));*//*
 
                 
 
-                return response;
+                return type;
             }
-        }
+        }*/
     }
 }

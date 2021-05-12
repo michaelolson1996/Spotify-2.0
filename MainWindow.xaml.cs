@@ -25,7 +25,7 @@ namespace Spotify_2._0
     {
 
         BackendTest backend = new BackendTest();
-        Backend.Backend backend2 = new Backend.Backend();
+        /*Backend.Backend backend2 = new Backend.Backend();*/
 
         public MainWindow()
         {
@@ -41,6 +41,11 @@ namespace Spotify_2._0
             {
                 Song_Text_Block.Text += $"Name: {song.name}\nDuration: {song.duration}\n";
             });
+        }
+
+        public void SearchUser(object sender,EventArgs e)
+        {
+            return;
         }
     }
 }
