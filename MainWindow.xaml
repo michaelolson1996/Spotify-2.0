@@ -1,4 +1,4 @@
-﻿<Window x:Class="Spotify_2._0.MainWindow"
+<Window x:Class="Spotify_2._0.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,21 +7,26 @@
         mc:Ignorable="d"
         Title="MainApplicationWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Grid>
-            <TextBox x:Name="userName" Height="25" Width="150" Margin="55,55,595,354"/>
-            <Button x:Name="SS" Click="SearchUser" Content="Search" Height="25" Width="64" Margin="210,55,526,354"/>
-            <TextBlock Height="50" Width="200" Margin="499,10,201,324"/>
-            <Label HorizontalAlignment="Left" Margin="664,128,0,0" Content="Song Name"  VerticalAlignment="Top" RenderTransformOrigin="0.646,-1.699"/>
-            <Label HorizontalAlignment="Left" Margin="77,128,0,0" Content="Playlist" VerticalAlignment="Top"/>
-            <Label Content="Album Name" Margin="459,128,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Label Content="Artist name" Margin="265,128,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <TextBlock x:Name="Playlist_Text_Block" HorizontalAlignment="Left" Margin="10,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="257" Width="180"/>
-            <TextBlock x:Name="Song_Text_Block" HorizontalAlignment="Left" Margin="610,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="257" Width="180"/>
-            <TextBlock x:Name="Artist_Name" Margin="210,167,411,10" TextWrapping="Wrap" Height="257" Width="180"/>
-            <TextBlock x:Name="Album_name"  TextWrapping="Wrap" Height="257" Width="180" Margin="409,167,211,10"/>
+        <TextBox x:Name="userName" Height="25" Width="150" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button x:Name="SearchUserBtn" Content="Search" Click="SearchUserBtn_Click" Height="25" Width="64" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Label Content="Song Name" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content="Playlist" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content="Album Name" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content="Artist name" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Song_Text_Block" Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Height="257" Width="180"/>
+        <TextBlock x:Name="Playlist_Text_Block" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Height="257" Width="180"/>
+        <TextBlock x:Name="Album_name" Grid.Row="1" Grid.Column="2" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Height="257" Width="180"/>
+        <TextBlock x:Name="Artist_Name" Grid.Row="1" Grid.Column="3" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Height="257" Width="180"/>
         </Grid>
-    </Grid>
 </Window>
+
