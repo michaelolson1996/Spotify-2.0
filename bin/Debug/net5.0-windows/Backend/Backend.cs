@@ -11,6 +11,7 @@ using System.Text.Json;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using Spotify_2._0.Classes;
+using SpotifyAPI.Web;
 
 namespace Spotify_2._0.Backend
 {
@@ -18,21 +19,13 @@ namespace Spotify_2._0.Backend
     {
         private string ClientId;
         private string ClientSecret;
-        private AccessToken Token { get; set; }
+ /*       private List<Playlist> playlists;*/
 
-
-
-        class AccessToken
-        {
-            public string access_token { get; set; }
-            public string token_type { get; set; }
-            public long expires_in { get; set; }
-        }
+        private SpotifyClient spotify { get; set; }
 
         public Backend()
         {
             InitializeEnvironment();
-            
         }
 
         private async void InitializeEnvironment()
@@ -41,71 +34,53 @@ namespace Spotify_2._0.Backend
             ClientId = Environment.GetEnvironmentVariable("CLIENT_ID");
             ClientSecret = Environment.GetEnvironmentVariable("CLIENT_SECRET");
 
-            Task<AccessToken> task_token = RetrieveToken();
+            await RetrieveToken();
+            
+            var test_playlists = await GetPlaylists("icedin");
 
-            Token = await task_token;
-
-            Trace.WriteLine(Token.access_token);
-
-            /*Task<T> task_playlists = RetrievePlaylists<T>("icedin");*/
-
-           /* _ = await task_playlists;*/
-            /*_ = RetrievePlaylists("icedin");*/
+            test_playlists.ForEach(playlist =>
+            {
+                Trace.WriteLine($" name : {playlist.name}\n description : {playlist.description}\n songs count : {playlist.total_songs}\n image url : {playlist.image}\n tracks url : {playlist.tracks_url}");
+            });
         }
 
-        private async Task<AccessToken> RetrieveToken()
+        private async Task RetrieveToken()
         {
-            using (var client = new HttpClient())
-            {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add( new MediaTypeWithQualityHeaderValue("application/json"));
+            var config = SpotifyClientConfig.CreateDefault();
+            var request = new ClientCredentialsRequest(ClientId, ClientSecret);
 
-                // add client id and client secret to the authorization header
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
-                        "Basic",
-                        Convert.ToBase64String(Encoding.UTF8.GetBytes($"{ClientId}:{ClientSecret}")));
-
-                // append the grant type to the request body
-                List<KeyValuePair<string, string>> requestData = new List<KeyValuePair<string, string>>();
-                requestData.Add(new KeyValuePair<string, string>("grant_type", "client_credentials"));
-
-                FormUrlEncodedContent requestBody = new FormUrlEncodedContent(requestData);
-
-                // send request and await response
-                var request = await client.PostAsync("https://accounts.spotify.com/api/token", requestBody);
-                var response = await request.Content.ReadAsStringAsync();
-
-                return JsonConvert.DeserializeObject<AccessToken>(response);
-            }
+            var response = await new OAuthClient(config).RequestToken(request);
+            spotify = new SpotifyClient(config.WithToken(response.AccessToken));
         }
 
- /*       private async Task<T> RetrievePlaylists<T>(string username)
+        private async Task<List<Playlist>> GetPlaylists(string username)
         {
-            string url = $"https://api.spotify.com/v1/users/{username}/playlists?access_token={Token.access_token}";
-            *//*Trace.WriteLine("RetrievePlaylists Method");*//*
-
-            using (var client = new HttpClient())
+            try
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var playlists = spotify.Playlists.GetUsers(username);
 
-                var request = await client.GetAsync(url);
-                var response = await request.Content.ReadAsStringAsync();
+                var playlist_items = await playlists;
 
-                T type = default(T);
+                List<Playlist> returning_playlists = new List<Playlist>();
 
-                type = JsonConvert.DeserializeObject<T>(response);
+                foreach (var item in playlist_items.Items)
+                {
+                    returning_playlists.Add(new Playlist(
+                        item.Images.Count > 0 ? item.Images[0].Url : "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapertag.com%2Fwallpaper%2Ffull%2F6%2F3%2F6%2F182000-light-gray-background-1920x1200-for-android-tablet.jpg&f=1&nofb=1",
+                        item.Name,
+                        item.Description,
+                        item.Tracks.Href,
+                        item.Tracks.Total.Value
+                    ));
+                }
 
-                Trace.WriteLine(type);
-
-               *//* Newtonsoft.Json.JsonSerializer js = new Newtonsoft.Json.JsonSerializer();
-                
-                Trace.WriteLine(js.Deserialize(response));*//*
-
-                
-
-                return type;
+                return returning_playlists;
             }
-        }*/
+            catch (Exception e)
+            {
+                Trace.WriteLine(e.Message);
+                return new List<Playlist>();
+            }
+        }
     }
 }

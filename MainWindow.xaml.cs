@@ -25,7 +25,7 @@ namespace Spotify_2._0
     {
 
         BackendTest backend = new BackendTest();
-        /*Backend.Backend backend2 = new Backend.Backend();*/
+        Backend.Backend backend2 = new Backend.Backend();
 
         public MainWindow()
         {

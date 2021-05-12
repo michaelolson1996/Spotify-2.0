@@ -9,7 +9,9 @@
       "Spotify 2.0/1.0.0": {
         "dependencies": {
           "DotNetEnv": "2.1.1",
-          "Newtonsoft.Json": "13.0.1"
+          "Newtonsoft.Json": "13.0.1",
+          "SpotifyAPI.Web": "6.2.0",
+          "SpotifyAPI.Web.Auth": "6.2.0"
         },
         "runtime": {
           "Spotify 2.0.dll": {}
@@ -24,6 +26,17 @@
           "lib/netstandard1.3/DotNetEnv.dll": {
             "assemblyVersion": "2.1.1.0",
             "fileVersion": "2.1.1.0"
+          }
+        }
+      },
+      "EmbedIO/3.4.3": {
+        "dependencies": {
+          "Unosquare.Swan.Lite": "3.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/EmbedIO.dll": {
+            "assemblyVersion": "3.4.3.0",
+            "fileVersion": "3.4.3.0"
           }
         }
       },
@@ -140,6 +153,29 @@
       "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
+      "SpotifyAPI.Web/6.2.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "lib/net5.0/SpotifyAPI.Web.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "SpotifyAPI.Web.Auth/6.2.0": {
+        "dependencies": {
+          "EmbedIO": "3.4.3",
+          "SpotifyAPI.Web": "6.2.0"
+        },
+        "runtime": {
+          "lib/net5.0/SpotifyAPI.Web.Auth.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Sprache/2.3.1": {
         "dependencies": {
           "System.Globalization": "4.3.0",
@@ -721,6 +757,14 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0"
         }
+      },
+      "Unosquare.Swan.Lite/3.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Swan.Lite.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
       }
     }
   },
@@ -736,6 +780,13 @@
       "sha512": "sha512-YbpHEBlB9Ay2MMMbUkm35oAUSRtdfXQecAoC7AbKZwCnHZbe0afrTLsX1zIZD4Bns+TPUL06mqshoQSEAMlEVw==",
       "path": "dotnetenv/2.1.1",
       "hashPath": "dotnetenv.2.1.1.nupkg.sha512"
+    },
+    "EmbedIO/3.4.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YM6hpZNAfvbbixfG9T4lWDGfF0D/TqutbTROL4ogVcHKwPF1hp+xS3ABwd3cxxTxvDFkj/zZl57QgWuFA8Igxw==",
+      "path": "embedio/3.4.3",
+      "hashPath": "embedio.3.4.3.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.1": {
       "type": "package",
@@ -883,6 +934,20 @@
       "sha512": "sha512-VB5cn/7OzUfzdnC8tqAIMQciVLiq2epm2NrAm1E9OjNRyG4lVhfR61SMcLizejzQP8R8Uf/0l5qOIbUEi+RdEg==",
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512"
+    },
+    "SpotifyAPI.Web/6.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3XiyyYV+UGM/zx9+d5u6PgadXHnhzMhiF737kHrTG5gf4hb0V5OM/gOL4PBTjMnqOl3NFOf7GX1yY00Bmhorwg==",
+      "path": "spotifyapi.web/6.2.0",
+      "hashPath": "spotifyapi.web.6.2.0.nupkg.sha512"
+    },
+    "SpotifyAPI.Web.Auth/6.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eEhjq7xaD3VUoom5xVuEcytXXiEZG5chy7TUQF1jkfcHxVUHM7JUrNzrBMTXR/BpgzoD8anEcqn0X6lBm2ljnw==",
+      "path": "spotifyapi.web.auth/6.2.0",
+      "hashPath": "spotifyapi.web.auth.6.2.0.nupkg.sha512"
     },
     "Sprache/2.3.1": {
       "type": "package",
@@ -1268,6 +1333,13 @@
       "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
+    },
+    "Unosquare.Swan.Lite/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-noPwJJl1Q9uparXy1ogtkmyAPGNfSGb0BLT1292nFH1jdMKje6o2kvvrQUvF9Xklj+IoiAI0UzF6Aqxlvo10lw==",
+      "path": "unosquare.swan.lite/3.0.0",
+      "hashPath": "unosquare.swan.lite.3.0.0.nupkg.sha512"
     }
   }
 }
