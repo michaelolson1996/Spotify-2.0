@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lawliet\\source\\repos\\Spotify-2.0\\Spotify 2.0.csproj": {}
+    "C:\\Users\\Carlos Duran\\Desktop\\Classes\\Year 3\\Quarter 1\\software\\project\\Spotify 2.0.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lawliet\\source\\repos\\Spotify-2.0\\Spotify 2.0.csproj": {
+    "C:\\Users\\Carlos Duran\\Desktop\\Classes\\Year 3\\Quarter 1\\software\\project\\Spotify 2.0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lawliet\\source\\repos\\Spotify-2.0\\Spotify 2.0.csproj",
+        "projectUniqueName": "C:\\Users\\Carlos Duran\\Desktop\\Classes\\Year 3\\Quarter 1\\software\\project\\Spotify 2.0.csproj",
         "projectName": "Spotify 2.0",
-        "projectPath": "C:\\Users\\lawliet\\source\\repos\\Spotify-2.0\\Spotify 2.0.csproj",
-        "packagesPath": "C:\\Users\\lawliet\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lawliet\\source\\repos\\Spotify-2.0\\obj\\",
+        "projectPath": "C:\\Users\\Carlos Duran\\Desktop\\Classes\\Year 3\\Quarter 1\\software\\project\\Spotify 2.0.csproj",
+        "packagesPath": "C:\\Users\\Carlos Duran\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Carlos Duran\\Desktop\\Classes\\Year 3\\Quarter 1\\software\\project\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\lawliet\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Carlos Duran\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
