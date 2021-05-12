@@ -4597,19 +4597,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lawliet\\.nuget\\packages\\": {}
+    "C:\\Users\\Michael Olson\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lawliet\\Source\\Repos\\Spotify-2.0\\Spotify 2.0.csproj",
+      "projectUniqueName": "C:\\Users\\Michael Olson\\Desktop\\spotify-2.0\\Spotify 2.0\\Spotify 2.0.csproj",
       "projectName": "Spotify 2.0",
-      "projectPath": "C:\\Users\\lawliet\\Source\\Repos\\Spotify-2.0\\Spotify 2.0.csproj",
-      "packagesPath": "C:\\Users\\lawliet\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lawliet\\Source\\Repos\\Spotify-2.0\\obj\\",
+      "projectPath": "C:\\Users\\Michael Olson\\Desktop\\spotify-2.0\\Spotify 2.0\\Spotify 2.0.csproj",
+      "packagesPath": "C:\\Users\\Michael Olson\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Michael Olson\\Desktop\\spotify-2.0\\Spotify 2.0\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\lawliet\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Michael Olson\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4662,7 +4662,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
