@@ -1,4 +1,4 @@
 .env
 obj/
-.vs/Spotify-2.0/.vs/slnx.sqlite
-.vs/Spotify-2.0/v16/.suo
+.vs/Spotify-2.0/.vs/
+.vs/Spotify-2.0/v16/
