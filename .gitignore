@@ -2,3 +2,5 @@
 obj/
 .vs/Spotify-2.0/.vs/
 .vs/Spotify-2.0/v16/
+bin/
+.vs/
