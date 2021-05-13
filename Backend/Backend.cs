@@ -35,13 +35,13 @@ namespace Spotify_2._0.Backend
             ClientSecret = Environment.GetEnvironmentVariable("CLIENT_SECRET");
 
             await RetrieveToken();
-            
-/*            var test_playlists = await GetPlaylists("icedin");
+
+            var test_playlists = await GetPlaylists("icedin");
 
             test_playlists.ForEach(playlist =>
             {
                 Trace.WriteLine($" name : {playlist.name}\n description : {playlist.description}\n songs count : {playlist.total_songs}\n image url : {playlist.image}\n tracks url : {playlist.tracks_url}");
-            });*/
+            });
         }
 
         private async Task RetrieveToken()
