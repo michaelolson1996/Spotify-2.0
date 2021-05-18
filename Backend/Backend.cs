@@ -85,12 +85,12 @@ namespace Spotify_2._0.Backend
             }
         }
 
-        public async Task<List<Song>> GetSongs(string playlistUrl)
+        public async Task<List<Song>> GetSongs(string playlistId)
         {
             try
             {
 
-                var playlist = await spotify.Playlists.Get("0dNixyJyJwMzTuWGNsuVz8");
+                var playlist = await spotify.Playlists.Get(playlistId);
 
                 List<Song> playlist_songs = new List<Song>();
 

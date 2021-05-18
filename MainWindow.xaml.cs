@@ -3,6 +3,7 @@ using Spotify_2._0.Classes;
 using System;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Spotify_2._0
 {
@@ -11,7 +12,7 @@ namespace Spotify_2._0
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        Button btn = new();
         BackendTest backend = new BackendTest();
         Backend.Backend backend2 = new Backend.Backend();
 
@@ -22,18 +23,19 @@ namespace Spotify_2._0
 
         public void SearchUserBtn_Click(object sender,EventArgs e)
         {
-            Playlist_Text_Block.Text = "";
-            DummyData();
-            //GetBackendInfo(SearchUserText.Text);
+            //DummyData();
+            GetBackendInfo(SearchUserText.Text);
         }
 
         public async void GetBackendInfo(string search)
         {
             List<Playlist> playlists = await backend2.GetPlaylists(search);
-            playlists.ForEach(playlist => { Playlist_Text_Block.Text += $"{playlist.name}\n"; });
+            List<Song> songs = await backend2.GetSongs(search);
+            playlists.ForEach(playlist => { btn = new(); btn.Content = $"{playlist.name}"; Playlist_Text_Block.Children.Add(btn); });
+            songs.ForEach(song => { btn.Content = $"{song.name}"; Song_Text_Block.Children.Add(btn); });
         }
 
-        public void DummyData()
+        /*public void DummyData()
         {
             List<Playlist> playlists = backend.RetrievePlaylists(5);
             List<Song> songs = backend.RetrievePlaylistSongs(3);
@@ -46,6 +48,6 @@ namespace Spotify_2._0
             {
                 Song_Text_Block.Text += $"Name: {song.name}\nDuration: {song.duration}\n";
             });
-        }
+        }*/
     }
 }
