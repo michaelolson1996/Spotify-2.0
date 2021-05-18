@@ -36,11 +36,13 @@ namespace Spotify_2._0.Backend
 
             await RetrieveToken();
 
-            var test_playlists = await GetPlaylists("icedin");
+            var test_playlists = await GetSongs("icedin");
+
+            Trace.WriteLine(test_playlists.Count);
 
             test_playlists.ForEach(playlist =>
             {
-                Trace.WriteLine($" name : {playlist.name}\n description : {playlist.description}\n songs count : {playlist.total_songs}\n image url : {playlist.image}\n tracks url : {playlist.tracks_url}");
+                Trace.WriteLine(playlist);
             });
         }
 
@@ -80,6 +82,41 @@ namespace Spotify_2._0.Backend
             {
                 Trace.WriteLine(e.Message);
                 return new List<Playlist>();
+            }
+        }
+
+        public async Task<List<Song>> GetSongs(string playlistUrl)
+        {
+            try
+            {
+
+                var playlist = await spotify.Playlists.Get("0dNixyJyJwMzTuWGNsuVz8");
+
+                List<Song> playlist_songs = new List<Song>();
+
+                foreach (PlaylistTrack<IPlayableItem> item in playlist.Tracks.Items)
+                {
+                    if (item.Track is FullTrack track)
+                    {
+                        playlist_songs.Add(
+                            new Song(
+                                track.Name,
+                                track.Album.Name,
+                                track.Album.Images[0].Url,
+                                track.Album.Artists,
+                                track.DurationMs,
+                                track.PreviewUrl
+                            )
+                        );
+                    }
+                }
+
+                return playlist_songs;
+            }
+            catch(Exception)
+            {
+                Trace.WriteLine("Error getting songs");
+                return new List<Song>();
             }
         }
     }

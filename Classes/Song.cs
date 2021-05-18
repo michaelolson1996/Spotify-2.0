@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpotifyAPI.Web;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,12 @@ namespace Spotify_2._0.Classes
         public string[] album_artists { get; set; }
         public int duration { get; set; }
         public string preview_url { get; set; }
+        public string Name1 { get; }
+        public string Name2 { get; }
+        public string Url { get; }
+        public List<SimpleArtist> Artists { get; }
+        public int DurationMs { get; }
+        public string PreviewUrl { get; }
 
         public Song(string name, string album_name, string album_img, string[] album_artists, int duration, string preview_url)
         {
@@ -23,6 +30,21 @@ namespace Spotify_2._0.Classes
             this.album_artists = album_artists;
             this.duration = duration;
             this.preview_url = preview_url;
+        }
+
+        public Song(string name1, string name2, string url, List<SimpleArtist> artists, int durationMs, string previewUrl)
+        {
+            this.name = name1;
+            this.album_name = name2;
+            this.album_img = url;
+            this.Artists = artists;
+            this.duration = durationMs;
+            this.preview_url = previewUrl;
+        }
+
+        public override string ToString()
+        {
+            return $"{name}\n{duration}\n{preview_url}";
         }
     }
 }
