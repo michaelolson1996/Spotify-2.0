@@ -70,7 +70,7 @@ namespace Spotify_2._0.Backend
             {
                 // index will pick item from song_artists, song_album_names, artists length will be random
                 int index = rng.Next(7);
-                songs.Add(new Song(song_names[index], song_album_names[index], album_image, artists.Take(index).ToArray(), duration, preview_url));
+                songs.Add(new Song(song_names[index], song_album_names[index], album_image, artists.Take(index).ToArray(), "", duration, preview_url));
             }
 
             return songs;

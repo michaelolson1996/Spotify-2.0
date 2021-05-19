@@ -2,8 +2,10 @@ using Spotify_2._0.Backend;
 using Spotify_2._0.Classes;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace Spotify_2._0
 {
@@ -35,12 +37,12 @@ namespace Spotify_2._0
                 btn = new(); 
                 btn.Content = $"{playlist.name}";
                 btn.DataContext += $"{playlist.id}";
-                btn.Click += new RoutedEventHandler(songsReturn);
+                btn.Click += new RoutedEventHandler(SongsReturn);
                 Playlist_Text_Block.Children.Add(btn); 
             });
         }
 
-        private async void songsReturn(object sender, RoutedEventArgs e)
+        private async void SongsReturn(object sender, RoutedEventArgs e)
         {
             Song_Text_Block.Children.Clear();
             object _ = ((Button)sender).DataContext;
@@ -51,8 +53,32 @@ namespace Spotify_2._0
             {
                 btn = new();
                 btn.Content = $"{song.name}";
+                string retStr = "";
+                song.Artists.ForEach(artist =>
+                {
+                    retStr += artist.Name;
+                });
+                btn.DataContext += $"Artist: {retStr}\n";
+                btn.DataContext += $"Album: {song.album_name}";
+                btn.MouseDoubleClick += Btn_MouseDoubleClick;
+                btn.Click += new RoutedEventHandler(ArtistAlbumReturn);
                 Song_Text_Block.Children.Add(btn);
             });
+        }
+
+        private void Btn_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void ArtistAlbumReturn(object sender, RoutedEventArgs e)
+        {
+            AlbumArtist_name.Text = "";
+
+            object _ = ((Button)sender).DataContext;
+            Trace.WriteLine(_);
+
+            AlbumArtist_name.Text += _;
         }
 
         public void DummyData()
@@ -66,6 +92,7 @@ namespace Spotify_2._0
                 text.Text += $"Name : {playlist.name} \nDescription : {playlist.description}\n";
                 Playlist_Text_Block.Children.Add(text);
             });
+
             songs.ForEach(song =>
             {
                 TextBlock textBlock = new();

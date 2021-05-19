@@ -105,6 +105,7 @@ namespace Spotify_2._0.Backend
                                 track.Album.Name,
                                 track.Album.Images[0].Url,
                                 track.Album.Artists,
+                                track.Id,
                                 track.DurationMs,
                                 track.PreviewUrl
                             )
