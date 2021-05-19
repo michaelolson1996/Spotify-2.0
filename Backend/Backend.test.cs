@@ -37,7 +37,7 @@ namespace Spotify_2._0.Backend
             for (int i = 0; i < how_many; i++)
             {
                 // users should see Image, Title, Description, and Number of Songs
-                playlists.Add(new Playlist(image, "Study Hour", "the music I listen to while I study", track_url, 3));
+                playlists.Add(new Playlist(image, "Study Hour", "the music I listen to while I study", "",track_url, 3));
             }
 
             return playlists;

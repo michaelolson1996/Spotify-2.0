@@ -71,9 +71,10 @@ namespace Spotify_2._0.Backend
                         item.Images.Count > 0 ? item.Images[0].Url : "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapertag.com%2Fwallpaper%2Ffull%2F6%2F3%2F6%2F182000-light-gray-background-1920x1200-for-android-tablet.jpg&f=1&nofb=1",
                         item.Name,
                         item.Description,
+                        item.Id,
                         item.Tracks.Href,
                         item.Tracks.Total.Value
-                    ));
+                    )) ;
                 }
 
                 return returning_playlists;

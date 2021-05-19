@@ -13,15 +13,15 @@ namespace Spotify_2._0
     public partial class MainWindow : Window
     {
         Button btn = new();
-        BackendTest backend = new BackendTest();
-        Backend.Backend backend2 = new Backend.Backend();
+        BackendTest backend = new();
+        readonly Backend.Backend backend2 = new();
 
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        public void SearchUserBtn_Click(object sender,EventArgs e)
+        public void SearchUserBtn_Click(object sender, EventArgs e)
         {
             //DummyData();
             GetBackendInfo(SearchUserText.Text);
@@ -30,24 +30,48 @@ namespace Spotify_2._0
         public async void GetBackendInfo(string search)
         {
             List<Playlist> playlists = await backend2.GetPlaylists(search);
-            List<Song> songs = await backend2.GetSongs(search);
-            playlists.ForEach(playlist => { btn = new(); btn.Content = $"{playlist.name}"; Playlist_Text_Block.Children.Add(btn); });
-            songs.ForEach(song => { btn.Content = $"{song.name}"; Song_Text_Block.Children.Add(btn); });
+
+            playlists.ForEach(playlist => { 
+                btn = new(); 
+                btn.Content = $"{playlist.name}";
+                btn.DataContext += $"{playlist.id}";
+                btn.Click += new RoutedEventHandler(songsReturn);
+                Playlist_Text_Block.Children.Add(btn); 
+            });
         }
 
-        /*public void DummyData()
+        private async void songsReturn(object sender, RoutedEventArgs e)
+        {
+            Song_Text_Block.Children.Clear();
+            object _ = ((Button)sender).DataContext;
+
+            List<Song> songs = await backend2.GetSongs(_.ToString());
+
+            songs.ForEach(song =>
+            {
+                btn = new();
+                btn.Content = $"{song.name}";
+                Song_Text_Block.Children.Add(btn);
+            });
+        }
+
+        public void DummyData()
         {
             List<Playlist> playlists = backend.RetrievePlaylists(5);
             List<Song> songs = backend.RetrievePlaylistSongs(3);
 
             playlists.ForEach(playlist =>
             {
-                Playlist_Text_Block.Text += $"Name : {playlist.name} \nDescription : {playlist.description}\n";
+                TextBlock text = new();
+                text.Text += $"Name : {playlist.name} \nDescription : {playlist.description}\n";
+                Playlist_Text_Block.Children.Add(text);
             });
             songs.ForEach(song =>
             {
-                Song_Text_Block.Text += $"Name: {song.name}\nDuration: {song.duration}\n";
+                TextBlock textBlock = new();
+                textBlock.Text += $"Name: {song.name}\nDuration: {song.duration}\n";
+                Song_Text_Block.Children.Add(textBlock);
             });
-        }*/
+        }
     }
 }
