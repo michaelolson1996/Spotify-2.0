@@ -22,25 +22,36 @@ namespace Spotify_2._0
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// this is the physical button that sends the username to backend
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void SearchUserBtn_Click(object sender, EventArgs e)
         {
             GetBackendInfo(SearchUserText.Text);
         }
-
+        /// <summary>
+        /// This is where we search for users based on their username and return data that Spotify's API gives us
+        /// </summary>
+        /// <param name="search"></param>
         public async void GetBackendInfo(string search)
         {
             List<Playlist> playlists = await backend2.GetPlaylists(search);
 
-            playlists.ForEach(playlist => { 
-                btn = new(); 
+            playlists.ForEach(playlist => {
+                btn = new();
                 btn.Content = $"{playlist.name}";
                 btn.DataContext += $"{playlist.id}";
                 btn.Click += new RoutedEventHandler(SongsReturn);
-                Playlist_Text_Block.Children.Add(btn); 
+                Playlist_Text_Block.Children.Add(btn);
             });
         }
-
+        /// <summary>
+        /// returns the song information and playlist data from the backend
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void SongsReturn(object sender, RoutedEventArgs e)
         {
             Song_Text_Block.Children.Clear();
@@ -65,7 +76,11 @@ namespace Spotify_2._0
                 Song_Text_Block.Children.Add(btn);
             });
         }
-
+        /// <summary>
+        /// this plays the preview for the songs returned in each playlist
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             try
@@ -80,7 +95,11 @@ namespace Spotify_2._0
             }
 
         }
-
+        /// <summary>
+        /// this returns the album and artist that the song clicked is in
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ArtistAlbumReturn(object sender, RoutedEventArgs e)
         {
             AlbumArtist_name.Text = "";
@@ -90,7 +109,9 @@ namespace Spotify_2._0
 
             AlbumArtist_name.Text += _;
         }
-
+        /// <summary>
+        /// this was dummy data for testing purposes in sprint 1
+        /// </summary>
         public void DummyData()
         {
             List<Playlist> playlists = backend.RetrievePlaylists(5);
