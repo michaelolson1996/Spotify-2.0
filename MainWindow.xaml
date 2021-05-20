@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Spotify_2._0"
+        Icon="icon.ico"
         mc:Ignorable="d"
         Title="MainApplicationWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="3*"/>
@@ -18,12 +19,12 @@
         </Grid.ColumnDefinitions>
         <TextBox x:Name="SearchUserText" Height="25" Width="150" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Button x:Name="SearchUserBtn" Content="Search" Click="SearchUserBtn_Click" Height="25" Width="64" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Label Content="Playlist" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Label Content="Song Name" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Label Content="Album and Artist Name" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Foreground="White" Content="Playlist" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Foreground="White" Content="Song Name" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Foreground="White" Content="Album and Artist Name" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <StackPanel x:Name="Playlist_Text_Block" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="257" Width="250"/>
         <StackPanel x:Name="Song_Text_Block" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="257" Width="250"/>
-        <TextBlock x:Name="AlbumArtist_name" Grid.Row="1" Grid.Column="2" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Height="257" Width="250"/>
+        <TextBlock Foreground="White" x:Name="AlbumArtist_name" Grid.Row="1" Grid.Column="2" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Height="257" Width="250"/>
         <MediaElement LoadedBehavior="Manual" x:Name="mePlayer" />
     </Grid>
 </Window>
