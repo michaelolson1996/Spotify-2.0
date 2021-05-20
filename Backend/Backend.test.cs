@@ -37,7 +37,7 @@ namespace Spotify_2._0.Backend
             for (int i = 0; i < how_many; i++)
             {
                 // users should see Image, Title, Description, and Number of Songs
-                playlists.Add(new Playlist(image, "Study Hour", "the music I listen to while I study", track_url, 3));
+                playlists.Add(new Playlist(image, "Study Hour", "the music I listen to while I study", "",track_url, 3));
             }
 
             return playlists;
@@ -70,7 +70,7 @@ namespace Spotify_2._0.Backend
             {
                 // index will pick item from song_artists, song_album_names, artists length will be random
                 int index = rng.Next(7);
-                songs.Add(new Song(song_names[index], song_album_names[index], album_image, artists.Take(index).ToArray(), duration, preview_url));
+                songs.Add(new Song(song_names[index], song_album_names[index], album_image, artists.Take(index).ToArray(), "", duration, preview_url));
             }
 
             return songs;
