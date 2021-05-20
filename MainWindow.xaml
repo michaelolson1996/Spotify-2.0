@@ -21,8 +21,8 @@
         <Label Foreground="White" Content="Playlist" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <Label Foreground="White" Content="Song Name" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <Label Foreground="White" Content="Album and Artist Name" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <TextBlock Foreground="White" x:Name="Playlist_Text_Block" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="257" Width="250"/>
-        <TextBlock Foreground="White" x:Name="Song_Text_Block" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="257" Width="250"/>
+        <StackPanel x:Name="Playlist_Text_Block" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="257" Width="250"/>
+        <StackPanel x:Name="Song_Text_Block" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="257" Width="250"/>
         <TextBlock Foreground="White" x:Name="AlbumArtist_name" Grid.Row="1" Grid.Column="2" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Height="257" Width="250"/>
         <MediaElement LoadedBehavior="Manual" x:Name="mePlayer" />
     </Grid>
