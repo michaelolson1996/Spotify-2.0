@@ -1,13 +1,9 @@
 ﻿using SpotifyAPI.Web;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Spotify_2._0.Classes
 {
-    class Song
+    internal class Song
     {
         public string name { get; set; }
         public string album_name { get; set; }

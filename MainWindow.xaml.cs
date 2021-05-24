@@ -14,14 +14,15 @@ namespace Spotify_2._0
     /// </summary>
     public partial class MainWindow : Window
     {
-        Button btn = new();
-        BackendTest backend = new();
-        readonly Backend.Backend backend2 = new();
+        private Button btn = new();
+        private BackendTest backend = new();
+        private readonly Backend.Backend backend2 = new();
 
         public MainWindow()
         {
             InitializeComponent();
         }
+
         /// <summary>
         /// this is the physical button that sends the username to backend
         /// </summary>
@@ -31,6 +32,7 @@ namespace Spotify_2._0
         {
             GetBackendInfo(SearchUserText.Text);
         }
+
         /// <summary>
         /// This is where we search for users based on their username and return data that Spotify's API gives us
         /// </summary>
@@ -38,9 +40,11 @@ namespace Spotify_2._0
         public async void GetBackendInfo(string search)
         {
             Playlist_Text_Block.Children.Clear();
+            AlbumArtist_name.Text = "";
             List<Playlist> playlists = await backend2.GetPlaylists(search);
 
-            playlists.ForEach(playlist => {
+            playlists.ForEach(playlist =>
+            {
                 btn = new();
                 btn.Content = $"{playlist.name}";
                 btn.DataContext += $"{playlist.id}";
@@ -48,6 +52,7 @@ namespace Spotify_2._0
                 Playlist_Text_Block.Children.Add(btn);
             });
         }
+
         /// <summary>
         /// returns the song information and playlist data from the backend
         /// </summary>
@@ -56,6 +61,7 @@ namespace Spotify_2._0
         private async void SongsReturn(object sender, RoutedEventArgs e)
         {
             Song_Text_Block.Children.Clear();
+            AlbumArtist_name.Text = "";
             object _ = ((Button)sender).DataContext;
 
             List<Song> songs = await backend2.GetSongs(_.ToString());
@@ -77,6 +83,7 @@ namespace Spotify_2._0
                 Song_Text_Block.Children.Add(btn);
             });
         }
+
         /// <summary>
         /// this plays the preview for the songs returned in each playlist
         /// </summary>
@@ -94,8 +101,8 @@ namespace Spotify_2._0
             {
                 mePlayer.Play();
             }
-
         }
+
         /// <summary>
         /// this returns the album and artist that the song clicked is in
         /// </summary>
@@ -110,6 +117,7 @@ namespace Spotify_2._0
 
             AlbumArtist_name.Text += _;
         }
+
         /// <summary>
         /// this was dummy data for testing purposes in sprint 1
         /// </summary>

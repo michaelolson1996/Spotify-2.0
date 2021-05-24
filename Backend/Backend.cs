@@ -1,25 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Diagnostics;
-using System.IO;
-using DotNetEnv;
-using System.Net.Http;
-using System.Text.Json;
-using System.Net.Http.Headers;
-using Newtonsoft.Json;
+﻿using DotNetEnv;
 using Spotify_2._0.Classes;
 using SpotifyAPI.Web;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace Spotify_2._0.Backend
 {
-    class Backend
+    internal class Backend
     {
         private string ClientId;
         private string ClientSecret;
- /*       private List<Playlist> playlists;*/
+        /*       private List<Playlist> playlists;*/
 
         private SpotifyClient spotify { get; set; }
 
@@ -65,7 +58,7 @@ namespace Spotify_2._0.Backend
                         item.Id,
                         item.Tracks.Href,
                         item.Tracks.Total.Value
-                    )) ;
+                    ));
                 }
 
                 return returning_playlists;
@@ -81,7 +74,6 @@ namespace Spotify_2._0.Backend
         {
             try
             {
-
                 var playlist = await spotify.Playlists.Get(playlistId);
 
                 List<Song> playlist_songs = new List<Song>();
@@ -105,7 +97,7 @@ namespace Spotify_2._0.Backend
                 }
                 return playlist_songs;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 Trace.WriteLine("Error getting songs");
                 return new List<Song>();
