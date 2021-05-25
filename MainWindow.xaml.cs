@@ -31,6 +31,9 @@ namespace Spotify_2._0
         public async void GetBackendInfo(string search)
         {
             List<Playlist> playlists = await backend2.GetPlaylists(search);
+            Playlist_Text_Block.Children.Clear();
+            Song_Text_Block.Children.Clear();
+            AlbumArtist_name.Text = "";
 
             playlists.ForEach(playlist => { 
                 btn = new(); 
@@ -70,12 +73,13 @@ namespace Spotify_2._0
         {
             try
             {
-                mePlayer.Close();
+                /*mePlayer.Close();*/
                 mePlayer.Source = new Uri(((Button)sender).Tag.ToString());
                 mePlayer.Play();
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                Trace.WriteLine(err.Message);
                 mePlayer.Play();
             }
 

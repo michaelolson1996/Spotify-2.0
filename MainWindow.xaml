@@ -28,4 +28,3 @@
         <MediaElement LoadedBehavior="Manual" x:Name="mePlayer" />
     </Grid>
 </Window>
-
