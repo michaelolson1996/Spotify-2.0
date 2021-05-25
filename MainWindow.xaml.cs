@@ -14,39 +14,57 @@ namespace Spotify_2._0
     /// </summary>
     public partial class MainWindow : Window
     {
-        Button btn = new();
-        BackendTest backend = new();
-        readonly Backend.Backend backend2 = new();
+        private Button btn = new();
+        private BackendTest backend = new();
+        private readonly Backend.Backend backend2 = new();
 
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// this is the physical button that sends the username to backend
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void SearchUserBtn_Click(object sender, EventArgs e)
         {
             GetBackendInfo(SearchUserText.Text);
         }
 
+        /// <summary>
+        /// This is where we search for users based on their username and return data that Spotify's API gives us
+        /// </summary>
+        /// <param name="search"></param>
         public async void GetBackendInfo(string search)
         {
+            Playlist_Text_Block.Children.Clear();
+            AlbumArtist_name.Text = "";
             List<Playlist> playlists = await backend2.GetPlaylists(search);
             Playlist_Text_Block.Children.Clear();
             Song_Text_Block.Children.Clear();
             AlbumArtist_name.Text = "";
 
-            playlists.ForEach(playlist => { 
-                btn = new(); 
+            playlists.ForEach(playlist =>
+            {
+                btn = new();
                 btn.Content = $"{playlist.name}";
                 btn.DataContext += $"{playlist.id}";
                 btn.Click += new RoutedEventHandler(SongsReturn);
-                Playlist_Text_Block.Children.Add(btn); 
+                Playlist_Text_Block.Children.Add(btn);
             });
         }
 
+        /// <summary>
+        /// returns the song information and playlist data from the backend
+        /// </summary>
+        /// <param name="sender">WPF handling how buttons send actions</param>
+        /// <param name="e">arguments that some buttons and actions require</param>
         private async void SongsReturn(object sender, RoutedEventArgs e)
         {
             Song_Text_Block.Children.Clear();
+            AlbumArtist_name.Text = "";
             object _ = ((Button)sender).DataContext;
 
             List<Song> songs = await backend2.GetSongs(_.ToString());
@@ -58,10 +76,10 @@ namespace Spotify_2._0
                 string retStr = "";
                 song.Artists.ForEach(artist =>
                 {
-                    retStr += artist.Name;
+                    retStr += artist.Name + '\n';
                 });
                 btn.Tag = song.preview_url;
-                btn.DataContext += $"Artist: {retStr}\n";
+                btn.DataContext += $"Artist(s): {retStr}\n";
                 btn.DataContext += $"Album: {song.album_name}";
                 btn.MouseDoubleClick += Btn_MouseDoubleClick;
                 btn.Click += new RoutedEventHandler(ArtistAlbumReturn);
@@ -69,6 +87,11 @@ namespace Spotify_2._0
             });
         }
 
+        /// <summary>
+        /// this plays the preview for the songs returned in each playlist
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             try
@@ -82,9 +105,13 @@ namespace Spotify_2._0
                 Trace.WriteLine(err.Message);
                 mePlayer.Play();
             }
-
         }
 
+        /// <summary>
+        /// this returns the album and artist that the song clicked is in
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ArtistAlbumReturn(object sender, RoutedEventArgs e)
         {
             AlbumArtist_name.Text = "";
@@ -95,6 +122,9 @@ namespace Spotify_2._0
             AlbumArtist_name.Text += _;
         }
 
+        /// <summary>
+        /// this was dummy data for testing purposes in sprint 1
+        /// </summary>
         public void DummyData()
         {
             List<Playlist> playlists = backend.RetrievePlaylists(5);
