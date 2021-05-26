@@ -1,44 +1,14 @@
-<<<<<<< HEAD
-<Window x:Class="Spotify_2._0.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Spotify_2._0"
-        Icon="icon.ico"
-        mc:Ignorable="d"
-        Title="MainApplicationWindow" Height="450" Width="800">
-    <Grid Background="Black">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="3*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-        </Grid.ColumnDefinitions>
-        <TextBox x:Name="SearchUserText" Height="25" Width="150" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button x:Name="SearchUserBtn" Content="Search" Click="SearchUserBtn_Click" Height="25" Width="64" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Label Foreground="White" Content="Playlist" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Label Foreground="White" Content="Song Name" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Label Foreground="White" Content="Album and Artist Name" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <StackPanel x:Name="Playlist_Text_Block" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="257" Width="250"/>
-        <StackPanel x:Name="Song_Text_Block" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="257" Width="250"/>
-        <TextBlock Foreground="White" x:Name="AlbumArtist_name" Grid.Row="1" Grid.Column="2" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Height="257" Width="250"/>
-        <MediaElement LoadedBehavior="Manual" x:Name="mePlayer" />
-    </Grid>
-=======
 <Window
     x:Class="Spotify_2._0.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Spotify_2._0"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MainApplicationWindow"
     Width="800"
     Height="450"
-    Icon="/icon.ico"
+    Icon="icon.ico"
     mc:Ignorable="d">
     <Grid Background="Black">
         <Grid.RowDefinitions>
@@ -89,22 +59,26 @@
             VerticalAlignment="Top"
             Content="Album and Artist Name"
             Foreground="White" />
-        <StackPanel
-            x:Name="Playlist_Text_Block"
+        <ScrollViewer
             Grid.Row="1"
             Grid.Column="0"
             Width="250"
-            Height="257"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center" />
-        <StackPanel
-            x:Name="Song_Text_Block"
+            Height="257">
+            <StackPanel
+                x:Name="Playlist_Text_Block"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" />
+        </ScrollViewer>
+        <ScrollViewer
             Grid.Row="1"
             Grid.Column="1"
             Width="250"
-            Height="257"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center" />
+            Height="257">
+            <StackPanel
+                x:Name="Song_Text_Block"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" />
+        </ScrollViewer>
         <TextBlock
             x:Name="AlbumArtist_name"
             Grid.Row="1"
@@ -117,5 +91,4 @@
             TextWrapping="Wrap" />
         <MediaElement x:Name="mePlayer" LoadedBehavior="Manual" />
     </Grid>
->>>>>>> 7c6a38c1c58e9cb4dfcedf8a385d946304678bab
 </Window>

@@ -40,11 +40,9 @@ namespace Spotify_2._0
         public async void GetBackendInfo(string search)
         {
             Playlist_Text_Block.Children.Clear();
-            AlbumArtist_name.Text = "";
-            List<Playlist> playlists = await backend2.GetPlaylists(search);
-            Playlist_Text_Block.Children.Clear();
             Song_Text_Block.Children.Clear();
             AlbumArtist_name.Text = "";
+            List<Playlist> playlists = await backend2.GetPlaylists(search);
 
             playlists.ForEach(playlist =>
             {
@@ -96,7 +94,6 @@ namespace Spotify_2._0
         {
             try
             {
-                /*mePlayer.Close();*/
                 mePlayer.Source = new Uri(((Button)sender).Tag.ToString());
                 mePlayer.Play();
             }
