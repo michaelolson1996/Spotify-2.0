@@ -14,6 +14,7 @@ namespace Spotify_2._0
     /// </summary>
     public partial class MainWindow : Window
     {
+        private string message = "Search a Spotify username in the upper lefthand box\nLeft click on each of your playlists to see the songs within\nDouble click the song to play the preview of each song";
         private Button btn = new();
         private BackendTest backend = new();
         private readonly Backend.Backend backend2 = new();
@@ -30,6 +31,8 @@ namespace Spotify_2._0
         /// <param name="e"></param>
         public void SearchUserBtn_Click(object sender, EventArgs e)
         {
+            PlayListScrollbar.ScrollToVerticalOffset(0);
+            SongScrollbar.ScrollToVerticalOffset(0);
             GetBackendInfo(SearchUserText.Text);
         }
 
@@ -41,6 +44,8 @@ namespace Spotify_2._0
         {
             Playlist_Text_Block.Children.Clear();
             Song_Text_Block.Children.Clear();
+            PlayListScrollbar.ScrollToVerticalOffset(0);
+            SongScrollbar.ScrollToVerticalOffset(0);
             AlbumArtist_name.Text = "";
             List<Playlist> playlists = await backend2.GetPlaylists(search);
 
@@ -144,7 +149,12 @@ namespace Spotify_2._0
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Search a Spotify username in the upper lefthand box\nLeft click on each of your playlists to see the songs within\nDouble click the song to play the preview of each song");
+            MessageBox.Show(message);
+        }
+
+        private void HelpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(message);
         }
     }
 }

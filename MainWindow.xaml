@@ -8,7 +8,7 @@
     Title="MainApplicationWindow"
     Width="800"
     Height="450"
-    Icon="icon.ico"
+    Icon="/icon.ico"
     Loaded="Window_Loaded"
     mc:Ignorable="d">
     <Grid Background="Black">
@@ -61,6 +61,7 @@
             Content="Album and Artist Name"
             Foreground="White" />
         <ScrollViewer
+            x:Name="PlayListScrollbar"
             Grid.Row="1"
             Grid.Column="0"
             Width="250"
@@ -71,6 +72,7 @@
                 VerticalAlignment="Center" />
         </ScrollViewer>
         <ScrollViewer
+            x:Name="SongScrollbar"
             Grid.Row="1"
             Grid.Column="1"
             Width="250"
@@ -90,6 +92,17 @@
             VerticalAlignment="Center"
             Foreground="White"
             TextWrapping="Wrap" />
+        <Button
+            x:Name="HelpBtn"
+            Grid.Row="0"
+            Grid.Column="2"
+            Width="20"
+            Height="20"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Click="HelpBtn_Click">
+            <Image Source="/questionmark.png" />
+        </Button>
         <MediaElement x:Name="mePlayer" LoadedBehavior="Manual" />
     </Grid>
 </Window>
