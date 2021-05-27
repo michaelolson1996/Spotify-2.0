@@ -9,6 +9,7 @@
     Width="800"
     Height="450"
     Icon="icon.ico"
+    Loaded="Window_Loaded"
     mc:Ignorable="d">
     <Grid Background="Black">
         <Grid.RowDefinitions>

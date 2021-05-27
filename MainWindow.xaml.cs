@@ -141,5 +141,10 @@ namespace Spotify_2._0
                 Song_Text_Block.Children.Add(textBlock);
             });
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Search a Spotify username in the upper lefthand box\nLeft click on each of your playlists to see the songs within\nDouble click the song to play the preview of each song");
+        }
     }
 }
