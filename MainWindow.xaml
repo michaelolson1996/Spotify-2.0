@@ -11,7 +11,7 @@
     Icon="/icon.ico"
     Loaded="Window_Loaded"
     mc:Ignorable="d">
-    <Grid Background="Black">
+    <Grid x:Name="GridLayout" Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
             <RowDefinition Height="3*" />

@@ -39,7 +39,7 @@ namespace Spotify_2._0
         /// <summary>
         /// This is where we search for users based on their username and return data that Spotify's API gives us
         /// </summary>
-        /// <param name="search"></param>
+        /// <param name="search">What user you are searching for in the Spotify API</param>
         public async void GetBackendInfo(string search)
         {
             Playlist_Text_Block.Children.Clear();
